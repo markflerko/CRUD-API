@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "start": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
+    "start:prod": "npm run build && npm run prod",
+    "prod": "node dist/server.js",
+    "build": "tsc",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
     "lint": "eslint --ext .js,.ts --fix src/"
   },
   "engines": {
