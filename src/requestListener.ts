@@ -5,8 +5,16 @@ import responseBuilder from './utils/responseBuilder';
 
 import emitter from './utils/eventEmitter';
 
-export default async (req: IncomingMessage, res: ServerResponse) => {
+export default async (
+  req: IncomingMessage,
+  res: ServerResponse,
+  pid: null | number = null
+) => {
   try {
+    if (pid !== null) {
+      res.setHeader('Process-Id', `${pid}`);
+    }
+
     const { method, url } = req;
 
     if (url) {

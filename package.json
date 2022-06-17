@@ -7,6 +7,9 @@
     "prod": "node dist/server.js",
     "build": "tsc",
     "start:dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
+    "prod:cluster": "node dist/server_cluster.js",
+    "cluster:dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server_cluster.ts",
+    "cluster:prod": "npm run build && npm run prod:cluster",
     "lint": "eslint --ext .js,.ts --fix src/"
   },
   "engines": {

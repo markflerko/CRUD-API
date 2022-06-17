@@ -20,5 +20,3 @@ process.on('uncaughtException', (error) => {
 process.on('unhandledRejection', (reason: { message: string }) => {
   console.log(`Unhandled rejection detected: ${reason.message}`);
 });
-
-export default app;
