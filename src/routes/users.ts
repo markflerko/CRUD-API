@@ -53,7 +53,7 @@ const getHandler = async (req: IncomingMessage, res: ServerResponse) => {
     responseBuilder({
       res,
       code: 404,
-      message: `Sorry but no user with ${id} exist \n`,
+      message: `Sorry but no user with id: ${id} exist \n`,
     });
   } else {
     const user = readUser(id);
@@ -85,7 +85,7 @@ const putHandler = async (req: IncomingMessage, res: ServerResponse) => {
     responseBuilder({
       res,
       code: 404,
-      message: `Sorry but no user with ${id} exist \n`,
+      message: `Sorry but no user with id: ${id} exist \n`,
     });
   } else {
     const updatedPerson = updateUser({ id, body: data });
@@ -109,7 +109,7 @@ const deleteHandler = async (req: IncomingMessage, res: ServerResponse) => {
     responseBuilder({
       res,
       code: 404,
-      message: `Sorry but no user with ${id} exist \n`,
+      message: `Sorry but no user with id: ${id} exist \n`,
     });
   } else {
     const isUserDeleted = deleteUser(id);

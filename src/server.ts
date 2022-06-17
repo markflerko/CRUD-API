@@ -6,7 +6,7 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-const app = http.createServer(requestListener);
+export const app = http.createServer(requestListener);
 
 app.listen(PORT, () =>
   console.log(`App is running on http://localhost:${PORT}`)
@@ -20,3 +20,5 @@ process.on('uncaughtException', (error) => {
 process.on('unhandledRejection', (reason: { message: string }) => {
   console.log(`Unhandled rejection detected: ${reason.message}`);
 });
+
+export default app;
