@@ -1,7 +1,7 @@
 import request from 'supertest';
 import app from '../server';
 
-describe('Custom scenario', () => {
+describe('Custom scenario 1', () => {
   const user = {
     username: 'kek',
     age: 42,
@@ -34,4 +34,6 @@ describe('Custom scenario', () => {
     expect(response.status).toBe(404);
     expect(response.text).toBe(`Sorry but no user with id: ${id} exist \n`);
   });
+
+  app.close()
 });
