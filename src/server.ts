@@ -4,7 +4,8 @@ import requestListener from './requestListener';
 
 dotenv.config();
 
-const PORT = process.env.NODE_ENV === 'test' ? 4001 : process.env.PORT;
+const PORT =
+  process.env.NODE_ENV === 'test' ? process.env.TEST_PORT : process.env.PORT;
 
 export const app = http.createServer(requestListener);
 
